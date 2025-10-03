@@ -10,25 +10,25 @@ import java.util.Optional;
 @Service
 public class LivroService {
 
-    private final LivroRepository repository;
+    private final LivroRepository repo;
 
-    public LivroService(LivroRepository repository) {
-        this.repository = repository;
+    public LivroService(LivroRepository repo) {
+        this.repo = repo;
     }
 
     public List<Livro> listarTodos() {
-        return repository.findAll();
+        return repo.findAll();
     }
 
     public Optional<Livro> buscarPorId(Long id) {
-        return repository.findById(id);
+        return repo.findById(id);
     }
 
     public Livro salvar(Livro livro) {
-        return repository.save(livro);
+        return repo.save(livro);
     }
 
     public void deletar(Long id) {
-        repository.deleteById(id);
+        repo.deleteById(id);
     }
 }
